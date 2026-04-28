@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Connecti Financiamentos – Seu sonho, nossa missão</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="nav-logo" aria-label="Connecti Financiamentos">
+        <span class="nav-logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M56 32A24 24 0 1 1 32 8" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+            <path d="M22 38L32 28L42 38V50H34V43H30V50H22V38Z" stroke="currentColor" stroke-width="4.5" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="nav-logo-text">Connecti</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#taxas">Taxas</a></li>
+        <li><a href="#simulador">Simulador</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+      <a href="https://wa.me/5500000000000" target="_blank" class="btn btn-gold nav-cta">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Fale Conosco
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="inicio">
+    <canvas class="hero-canvas" id="heroCanvas"></canvas>
+    <div class="hero-overlay"></div>
+    <!-- Silhueta decorativa da logo/casa -->
+    <div class="hero-deco" aria-hidden="true">
+      <svg class="hero-deco-svg" viewBox="0 0 520 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Anel externo do C -->
+        <path d="M430 260 A170 170 0 1 1 260 90" stroke="url(#heroGold)" stroke-width="28" stroke-linecap="round" fill="none"/>
+        <!-- Casa -->
+        <path d="M190 310 L260 230 L330 310 L330 390 L275 390 L275 345 L245 345 L245 390 L190 390 Z" stroke="url(#heroGold)" stroke-width="16" stroke-linejoin="round" fill="none"/>
+        <!-- Janela esq -->
+        <rect x="205" y="325" width="28" height="24" rx="3" stroke="url(#heroGold)" stroke-width="10" fill="none"/>
+        <!-- Janela dir -->
+        <rect x="306" y="325" width="28" height="24" rx="3" stroke="url(#heroGold)" stroke-width="10" fill="none"/>
+        <!-- Triangulo telhado extra -->
+        <defs>
+          <linearGradient id="heroGold" x1="90" y1="90" x2="430" y2="430" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#f0d080" stop-opacity="0.55"/>
+            <stop offset="60%" stop-color="#c9a84c" stop-opacity="0.35"/>
+            <stop offset="100%" stop-color="#c9a84c" stop-opacity="0.1"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+    <div class="container hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Consultoria 100% gratuita
+      </div>
+      <h1>Realize o sonho<br/><span class="gold-text">do seu imóvel</span></h1>
+      <p class="hero-sub">Encontramos o melhor financiamento para você sem burocracia. Comparamos todos os bancos e cuidamos de cada etapa do processo.</p>
+      <div class="hero-actions">
+        <a href="#simulador" class="btn btn-gold btn-lg">Simular Agora</a>
+        <a href="#sobre" class="btn btn-outline-white btn-lg">Saiba Mais</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-num">+500</span>
+          <span class="stat-label">Famílias atendidas</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num">4</span>
+          <span class="stat-label">Bancos parceiros</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">Online e sem filas</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-dot"></div>
+    </div>
+  </section>
+
+  <!-- ========== SOBRE ========== -->
+  <section class="sobre" id="sobre">
+    <div class="sobre-logo-watermark" aria-hidden="true"><img src="logo.png" alt="" /></div>
+    <div class="container sobre-grid">
+      <div class="sobre-img-wrap">
+        <!-- Carrossel de casas de luxo -->
+        <div class="carousel-wrap">
+          <div class="carousel" id="carousel">
+            <div class="carousel-track" id="carouselTrack">
+              <div class="carousel-slide">
+                <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?w=700&q=80&auto=format&fit=crop" alt="Casa de luxo moderna" loading="lazy" />
+                <div class="slide-caption">Financiamento Residencial · A partir de 9,50% a.a.</div>
+              </div>
+              <div class="carousel-slide">
+                <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=700&q=80&auto=format&fit=crop" alt="Mansão contemporânea" loading="lazy" />
+                <div class="slide-caption">Imóvel de Alto Padrão · Parcelamento em até 35 anos</div>
+              </div>
+              <div class="carousel-slide">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=700&q=80&auto=format&fit=crop" alt="Villa moderna com piscina" loading="lazy" />
+                <div class="slide-caption">Crédito com Garantia · A partir de 1,09% a.m.</div>
+              </div>
+              <div class="carousel-slide">
+                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=700&q=80&auto=format&fit=crop" alt="Residência luxuosa" loading="lazy" />
+                <div class="slide-caption">Realize seu sonho · Consultoria gratuita</div>
+              </div>
+              <div class="carousel-slide">
+                <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=700&q=80&auto=format&fit=crop" alt="Casa moderna vista aérea" loading="lazy" />
+                <div class="slide-caption">Seu imóvel dos sonhos · A gente cuida de tudo</div>
+              </div>
+            </div>
+          </div>
+          <!-- Controles -->
+          <button class="carousel-btn carousel-prev" id="carouselPrev" aria-label="Anterior">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button class="carousel-btn carousel-next" id="carouselNext" aria-label="Próximo">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <!-- Dots -->
+          <div class="carousel-dots" id="carouselDots"></div>
+          <!-- Badge flutuante -->
+          <div class="sobre-float-card">
+            <p class="float-num">R$ 1,2 <span>bi</span></p>
+            <p class="float-label">em crédito intermediado</p>
+          </div>
+        </div>
+      </div>
+      <div class="sobre-text">
+        <span class="section-tag">Quem somos</span>
+        <h2>Especialistas em <span class="gold-text">crédito imobiliário</span> que trabalham por você</h2>
+        <p>A Connecti Financiamentos nasceu com uma missão clara: conectar pessoas ao financiamento imobiliário ideal, sem burocracia e com o melhor custo-benefício do mercado.</p>
+        <p>Nossa equipe de consultores certificados analisa seu perfil financeiro e busca as melhores condições em todos os bancos parceiros — Itaú, Bradesco, Santander e Inter.</p>
+        <ul class="sobre-list">
+          <li>
+            <div class="list-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#c9a84c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            Consultoria gratuita sem compromisso
+          </li>
+          <li>
+            <div class="list-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#c9a84c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            Profissionais certificados pelo Banco Central
+          </li>
+          <li>
+            <div class="list-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#c9a84c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            Acompanhamento completo até a escritura
+          </li>
+          <li>
+            <div class="list-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#c9a84c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            Uso do FGTS para entrada ou amortização
+          </li>
+        </ul>
+        <a href="#simulador" class="btn btn-gold">Simular meu financiamento</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SERVIÇOS ========== -->
+  <section class="servicos" id="servicos">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">O que oferecemos</span>
+        <h2>Soluções completas de <span class="gold-text">crédito imobiliário</span></h2>
+        <p>Do primeiro contato até a entrega das chaves, cuidamos de tudo por você.</p>
+      </div>
+      <div class="servicos-grid">
+        <div class="servico-card">
+          <div class="servico-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><polyline points="9,22 9,12 15,12 15,22" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Financiamento Residencial</h3>
+          <p>Imóveis novos e usados com as melhores taxas do mercado. Financie até 90% em até 35 anos.</p>
+          <a href="#simulador" class="card-link">Simular <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="servico-card featured">
+          <div class="featured-badge">Mais popular</div>
+          <div class="servico-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><rect x="2" y="7" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><line x1="12" y1="12" x2="12" y2="16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><line x1="10" y1="14" x2="14" y2="14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Empréstimo com Garantia de Imóvel</h3>
+          <p>Use seu imóvel como garantia e obtenha crédito com taxas a partir de 1,09% a.m. para qualquer finalidade.</p>
+          <a href="#simulador" class="card-link">Simular <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="servico-card">
+          <div class="servico-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M21 10H3M21 6H3M21 14H3M21 18H3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Imóveis Comerciais e Terrenos</h3>
+          <p>Financiamento para imóveis comerciais e terrenos com condições especiais para PF e PJ. LTV até 80%.</p>
+          <a href="#simulador" class="card-link">Simular <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="servico-card">
+          <div class="servico-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Portabilidade de Crédito</h3>
+          <p>Já tem financiamento? Transfira para um banco com taxa menor e economize milhares de reais.</p>
+          <a href="#simulador" class="card-link">Simular <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== LOGO BG BANNER ========== -->
+  <section class="logo-bg-banner">
+    <div class="logo-bg-image"></div>
+    <div class="logo-bg-overlay"></div>
+    <div class="container logo-bg-content">
+      <div class="logo-bg-left">
+        <span class="section-tag tag-gold">Connecti Financiamentos</span>
+        <h2>Conectando você ao <span class="gold-text">melhor financiamento</span> do Brasil</h2>
+        <p>Somos um correspondente bancário autorizado pelo Banco Central. Nosso time de especialistas encontra as melhores taxas para o seu perfil.</p>
+        <div class="logo-bg-stats">
+          <div class="lbs-item">
+            <strong>+4</strong>
+            <span>Bancos parceiros</span>
+          </div>
+          <div class="lbs-item">
+            <strong>35 anos</strong>
+            <span>Prazo máximo</span>
+          </div>
+          <div class="lbs-item">
+            <strong>90%</strong>
+            <span>LTV financiável</span>
+          </div>
+        </div>
+        <a href="#simulador" class="btn btn-gold btn-lg">Simular agora</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TAXAS ========== -->
+  <section class="taxas" id="taxas">
+    <div class="container">
+      <div class="section-header light">
+        <span class="section-tag tag-gold">Tabela de taxas</span>
+        <h2>Taxas atualizadas dos <span class="gold-text">bancos parceiros</span></h2>
+        <p>Atualizado em 31/03/2026 · Taxas sujeitas a alteração sem aviso prévio</p>
+      </div>
+
+      <!-- Tabs de tipo de financiamento -->
+      <div class="taxas-tabs">
+        <button class="tab-btn active" data-tab="residencial">Residencial</button>
+        <button class="tab-btn" data-tab="garantia">Garantia de Imóvel</button>
+        <button class="tab-btn" data-tab="comercial">Comercial &amp; Terrenos</button>
+      </div>
+
+      <!-- Tab: Residencial -->
+      <div class="tab-content active" id="tab-residencial">
+        <div class="taxas-grid">
+          <div class="taxa-card">
+            <div class="taxa-bank">
+              <div class="bank-logo itau">itaú</div>
+              <span class="bank-name">Itaú</span>
+            </div>
+            <div class="taxa-rows">
+              <div class="taxa-row">
+                <span class="taxa-tipo">Personnalité</span>
+                <span class="taxa-valor">A partir de <strong>11,70% a.a.</strong> + T.R.</span>
+                <span class="taxa-prazo">420 meses</span>
+              </div>
+              <div class="taxa-row">
+                <span class="taxa-tipo">Uniclass</span>
+                <span class="taxa-valor">A partir de <strong>12,00% a.a.</strong> + T.R.</span>
+                <span class="taxa-prazo">420 meses</span>
+              </div>
+              <div class="taxa-row">
+                <span class="taxa-tipo">Agências / Não Correntista</span>
+                <span class="taxa-valor">A partir de <strong>13,45% a.a.</strong> + T.R.</span>
+                <span class="taxa-prazo">420 meses</span>
+              </div>
+            </div>
+          </div>
+          <div class="taxa-card">
+            <div class="taxa-bank">
+              <div class="bank-logo bradesco">Bradesco</div>
+              <span class="bank-name">Bradesco</span>
+            </div>
+            <div class="taxa-rows">
+              <div class="taxa-row">
+                <span class="taxa-tipo">Residencial Parcerias</span>
+                <span class="taxa-valor">A partir de <strong>12,30% a.a.</strong> + T.R.</span>
+                <span class="taxa-prazo">420 meses</span>
+              </div>
+              <div class="taxa-row highlight-row">
+                <span class="taxa-tipo">Prime</span>
+                <span class="taxa-valor">A partir de <strong>11,99% a.a.</strong> + T.R.</span>
+                <span class="taxa-prazo">420 meses</span>
+              </div>
+              <div class="taxa-row highlight-row">
+                <span class="taxa-tipo">Principal</span>
+                <span class="taxa-valor">A partir de <strong>11,70% a.a.</strong> + T.R.</span>
+                <span class="taxa-prazo">420 meses</span>
+              </div>
+            </div>
+            <div class="taxa-novidade">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#c9a84c" stroke-width="2"/><path d="M12 8v4M12 16h.01" stroke="#c9a84c" stroke-width="2" stroke-linecap="round"/></svg>
+              Taxa personalizada a partir de 06/04/2026
+            </div>
+          </div>
+          <div class="taxa-card">
+            <div class="taxa-bank">
+              <div class="bank-logo santander">Santander</div>
+              <span class="bank-name">Santander</span>
+            </div>
+            <div class="taxa-rows">
+              <div class="taxa-row">
+                <span class="taxa-tipo">PF – PRICE</span>
+                <span class="taxa-valor">A partir de <strong>14,04% a.a.</strong> + T.R.</span>
+                <span class="taxa-prazo">420 meses</span>
+              </div>
+              <div class="taxa-row">
+                <span class="taxa-tipo">PF – SAC</span>
+                <span class="taxa-valor">A partir de <strong>11,69% a.a.</strong> + T.R.</span>
+                <span class="taxa-prazo">420 meses</span>
+              </div>
+            </div>
+          </div>
+          <div class="taxa-card">
+            <div class="taxa-bank">
+              <div class="bank-logo inter">inter</div>
+              <span class="bank-name">Banco Inter</span>
+            </div>
+            <div class="taxa-rows">
+              <div class="taxa-row">
+                <span class="taxa-tipo">PF</span>
+                <span class="taxa-valor">A partir de <strong>9,50% a.a.</strong> + IPCA</span>
+                <span class="taxa-prazo">420 meses</span>
+              </div>
+              <div class="taxa-row">
+                <span class="taxa-tipo">PJ</span>
+                <span class="taxa-valor">A partir de <strong>12,00% a.a.</strong> + IPCA</span>
+                <span class="taxa-prazo">240 meses</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab: Garantia de Imóvel -->
+      <div class="tab-content" id="tab-garantia">
+        <div class="taxas-grid">
+          <div class="taxa-card">
+            <div class="taxa-bank">
+              <div class="bank-logo santander">Santander</div>
+              <span class="bank-name">Santander</span>
+            </div>
+            <div class="taxa-rows">
+              <div class="taxa-row">
+                <span class="taxa-tipo">Price e SAC</span>
+                <span class="taxa-valor">A partir de <strong>1,12% a.m.</strong></span>
+                <span class="taxa-prazo">240 meses · Com seguro</span>
+              </div>
+            </div>
+          </div>
+          <div class="taxa-card">
+            <div class="taxa-bank">
+              <div class="bank-logo inter">inter</div>
+              <span class="bank-name">Banco Inter</span>
+            </div>
+            <div class="taxa-rows">
+              <div class="taxa-row">
+                <span class="taxa-tipo">SAC – IPCA</span>
+                <span class="taxa-valor">A partir de <strong>1,09% a.m.</strong> + IPCA</span>
+                <span class="taxa-prazo">240 meses · Com seguro</span>
+              </div>
+              <div class="taxa-row">
+                <span class="taxa-tipo">PRICE – IPCA</span>
+                <span class="taxa-valor">A partir de <strong>1,09% a.m.</strong> + IPCA</span>
+                <span class="taxa-prazo">180 meses</span>
+              </div>
+              <div class="taxa-row">
+                <span class="taxa-tipo">SAC – Fixa</span>
+                <span class="taxa-valor">A partir de <strong>1,70% a.m.</strong> fixa</span>
+                <span class="taxa-prazo">240 meses</span>
+              </div>
+              <div class="taxa-row">
+                <span class="taxa-tipo">PRICE – Fixa</span>
+                <span class="taxa-valor">A partir de <strong>1,90% a.m.</strong> fixa</span>
+                <span class="taxa-prazo">180 meses</span>
+              </div>
+            </div>
+          </div>
+          <div class="taxa-card">
+            <div class="taxa-bank">
+              <div class="bank-logo bradesco">Bradesco</div>
+              <span class="bank-name">Bradesco</span>
+            </div>
+            <div class="taxa-rows">
+              <div class="taxa-row">
+                <span class="taxa-tipo">SAC (até R$ 1,5 mi)</span>
+                <span class="taxa-valor"><strong>Custo do dia + 5% a.a.</strong> (SPREAD)</span>
+                <span class="taxa-prazo">240 meses · Sem seguro</span>
+              </div>
+              <div class="taxa-row">
+                <span class="taxa-tipo">Acima de R$ 1,5 mi</span>
+                <span class="taxa-valor">Prazo sujeito a análise</span>
+                <span class="taxa-prazo">–</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab: Comercial -->
+      <div class="tab-content" id="tab-comercial">
+        <div class="taxas-grid">
+          <div class="taxa-card">
+            <div class="taxa-bank">
+              <div class="bank-logo santander">Santander</div>
+              <span class="bank-name">Santander</span>
+            </div>
+            <div class="taxa-rows">
+              <div class="taxa-row">
+                <span class="taxa-tipo">Comerciais PF – PRICE</span>
+                <span class="taxa-valor">A partir de <strong>11,79% a.a.</strong> + T.R. · LTV 70%</span>
+                <span class="taxa-prazo">360 meses</span>
+              </div>
+              <div class="taxa-row">
+                <span class="taxa-tipo">Comerciais PF – SAC</span>
+                <span class="taxa-valor">A partir de <strong>11,79% a.a.</strong> + T.R. · LTV 70%</span>
+                <span class="taxa-prazo">360 meses</span>
+              </div>
+            </div>
+          </div>
+          <div class="taxa-card">
+            <div class="taxa-bank">
+              <div class="bank-logo itau">itaú</div>
+              <span class="bank-name">Itaú</span>
+            </div>
+            <div class="taxa-rows">
+              <div class="taxa-row">
+                <span class="taxa-tipo">Comerciais PF</span>
+                <span class="taxa-valor">A partir de <strong>14,80% a.a.</strong> + T.R. · LTV 80%</span>
+                <span class="taxa-prazo">240 meses</span>
+              </div>
+            </div>
+          </div>
+          <div class="taxa-card">
+            <div class="taxa-bank">
+              <div class="bank-logo bradesco">Bradesco</div>
+              <span class="bank-name">Bradesco</span>
+            </div>
+            <div class="taxa-rows">
+              <div class="taxa-row">
+                <span class="taxa-tipo">Terrenos PF e PJ</span>
+                <span class="taxa-valor">A partir de <strong>13,99% a.a.</strong> + T.R. · LTV 70% PF / 70% PJ</span>
+                <span class="taxa-prazo">240 meses</span>
+              </div>
+              <div class="taxa-row">
+                <span class="taxa-tipo">Comerciais PF e PJ</span>
+                <span class="taxa-valor">A partir de <strong>13,99% a.a.</strong> + T.R. · LTV 70% PF / 60% PJ</span>
+                <span class="taxa-prazo">240 meses</span>
+              </div>
+            </div>
+          </div>
+          <div class="taxa-card">
+            <div class="taxa-bank">
+              <div class="bank-logo inter">inter</div>
+              <span class="bank-name">Banco Inter</span>
+            </div>
+            <div class="taxa-rows">
+              <div class="taxa-row">
+                <span class="taxa-tipo">Terrenos PF e PJ</span>
+                <span class="taxa-valor">A partir de <strong>12,00% a.a.</strong> + IPCA · LTV 50%</span>
+                <span class="taxa-prazo">240 meses</span>
+              </div>
+              <div class="taxa-row">
+                <span class="taxa-tipo">Comerciais PF e PJ</span>
+                <span class="taxa-valor">A partir de <strong>12,00% a.a.</strong> + IPCA · LTV 75%</span>
+                <span class="taxa-prazo">240 meses</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="taxas-aviso">* Taxas sujeitas a alteração sem aviso prévio. Sobre taxas de processos em andamento, fale com seu consultor.</p>
+    </div>
+  </section>
+
+  <!-- ========== SIMULADOR ========== -->
+  <section class="simulador" id="simulador">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Simulador</span>
+        <h2>Simule seu <span class="gold-text">financiamento</span> agora</h2>
+        <p>Calcule a parcela estimada de acordo com as taxas reais de cada banco.</p>
+      </div>
+      <div class="sim-wrapper">
+        <!-- Formulário -->
+        <div class="sim-form-box">
+          <div class="sim-bank-selector">
+            <p class="sim-label">Escolha o banco</p>
+            <div class="bank-btns">
+              <button class="bank-btn active" data-bank="itau">
+                <span class="bbank-logo itau-sm">itaú</span>
+              </button>
+              <button class="bank-btn" data-bank="bradesco">
+                <span class="bbank-logo bradesco-sm">Bradesco</span>
+              </button>
+              <button class="bank-btn" data-bank="santander">
+                <span class="bbank-logo santander-sm">Santander</span>
+              </button>
+              <button class="bank-btn" data-bank="inter">
+                <span class="bbank-logo inter-sm">inter</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Modalidade por banco -->
+          <div class="sim-modalidade" id="simModalidade">
+            <p class="sim-label">Modalidade</p>
+            <div class="select-wrap">
+              <select id="modalidade"></select>
+            </div>
+          </div>
+
+          <div class="sim-fields">
+            <div class="sim-field">
+              <label for="valorImovel">Valor do imóvel (R$)</label>
+              <div class="input-wrap">
+                <span class="input-prefix">R$</span>
+                <input type="text" id="valorImovel" placeholder="500.000" />
+              </div>
+            </div>
+            <div class="sim-field">
+              <label for="entrada">Valor da entrada (R$)</label>
+              <div class="input-wrap">
+                <span class="input-prefix">R$</span>
+                <input type="text" id="entrada" placeholder="100.000" />
+              </div>
+            </div>
+            <div class="sim-field">
+              <label for="prazo">Prazo (meses)</label>
+              <div class="input-wrap prazo-wrap">
+                <input type="range" id="prazoRange" min="12" max="420" value="360" step="12" />
+                <span id="prazoDisplay">360 meses</span>
+              </div>
+            </div>
+            <div class="sim-field">
+              <label for="sistema">Sistema de amortização</label>
+              <div class="select-wrap">
+                <select id="sistema">
+                  <option value="SAC">SAC – Prestação Decrescente</option>
+                  <option value="PRICE">PRICE – Prestação Fixa</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn btn-gold btn-full" id="btnCalcular">Calcular Financiamento</button>
+        </div>
+
+        <!-- Resultado -->
+        <div class="sim-result-box" id="simResult">
+          <div class="result-header">
+            <div class="result-bank-badge" id="resultBankName">Itaú</div>
+            <p class="result-subtitle">Estimativa de financiamento</p>
+          </div>
+          <div class="result-main">
+            <p class="result-label">1ª parcela estimada</p>
+            <p class="result-valor" id="result1aParcela">R$ –</p>
+          </div>
+          <div class="result-details">
+            <div class="result-detail-row">
+              <span>Valor financiado</span>
+              <span id="resultFinanciado">–</span>
+            </div>
+            <div class="result-detail-row">
+              <span>Última parcela (SAC)</span>
+              <span id="resultUltimaParcela">–</span>
+            </div>
+            <div class="result-detail-row">
+              <span>Taxa de juros</span>
+              <span id="resultTaxa">–</span>
+            </div>
+            <div class="result-detail-row">
+              <span>Prazo</span>
+              <span id="resultPrazo">–</span>
+            </div>
+            <div class="result-detail-row total">
+              <span>Total a pagar (estimado)</span>
+              <span id="resultTotal">–</span>
+            </div>
+          </div>
+          <div class="result-aviso">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#c9a84c" stroke-width="2"/><path d="M12 8v4M12 16h.01" stroke="#c9a84c" stroke-width="2" stroke-linecap="round"/></svg>
+            Simulação estimada. Não inclui seguros obrigatórios, TR ou IPCA (quando aplicável). Fale com nosso consultor para valores exatos.
+          </div>
+          <a href="https://wa.me/5500000000000" target="_blank" class="btn btn-gold btn-full">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Falar com Consultor
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROCESSO ========== -->
+  <section class="processo">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Como funciona</span>
+        <h2>Seu financiamento em <span class="gold-text">4 passos simples</span></h2>
+      </div>
+      <div class="processo-steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Consulta inicial</h3>
+          <p>Entre em contato e nos conte seu objetivo. Consulta 100% gratuita e sem compromisso.</p>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M9 11l3 3L22 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Análise de crédito</h3>
+          <p>Analisamos seu perfil e comparamos as melhores opções nos bancos parceiros.</p>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div class="step-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Aprovação e documentação</h3>
+          <p>Cuidamos de toda a burocracia documental e acompanhamos a aprovação junto ao banco.</p>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <div class="step-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="1.8"/></svg>
+          </div>
+          <h3>Escritura e entrega</h3>
+          <p>Acompanhamos o registro em cartório e a entrega das chaves do seu novo lar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA BANNER ========== -->
+  <section class="cta-banner">
+    <div class="cta-banner-overlay"></div>
+    <div class="container cta-banner-inner">
+      <div>
+        <h2>Pronto para conquistar seu imóvel?</h2>
+        <p>Fale agora com um consultor especializado e receba uma proposta personalizada.</p>
+      </div>
+      <div class="cta-banner-actions">
+        <a href="https://wa.me/5500000000000" target="_blank" class="btn btn-gold btn-lg">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Falar pelo WhatsApp
+        </a>
+        <a href="#simulador" class="btn btn-outline-white btn-lg">Simular agora</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTATO ========== -->
+  <section class="contato" id="contato">
+    <div class="container contato-grid">
+      <div class="contato-info">
+        <span class="section-tag">Fale conosco</span>
+        <h2>Entre em <span class="gold-text">contato</span></h2>
+        <p>Nossa equipe está pronta para ajudar você a encontrar o melhor financiamento. Atendimento humanizado do início ao fim.</p>
+        <div class="contato-cards">
+          <a href="https://wa.me/5500000000000" target="_blank" class="contato-card">
+            <div class="contato-card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </div>
+            <div>
+              <strong>WhatsApp</strong>
+              <span>(00) 00000-0000</span>
+            </div>
+          </a>
+          <a href="mailto:contato@connectifinancimentos.com.br" class="contato-card">
+            <div class="contato-card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="1.8"/><polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="1.8"/></svg>
+            </div>
+            <div>
+              <strong>E-mail</strong>
+              <span>contato@connectifinancimentos.com.br</span>
+            </div>
+          </a>
+          <div class="contato-card">
+            <div class="contato-card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="1.8"/></svg>
+            </div>
+            <div>
+              <strong>Localização</strong>
+              <span>Atendimento online em todo o Brasil</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contato-form-box">
+        <form class="contato-form" id="contatoForm">
+          <h3>Solicite uma simulação gratuita</h3>
+          <div class="form-row">
+            <div class="form-field">
+              <label>Nome completo</label>
+              <input type="text" placeholder="Seu nome" required />
+            </div>
+            <div class="form-field">
+              <label>Telefone / WhatsApp</label>
+              <input type="tel" placeholder="(00) 00000-0000" required />
+            </div>
+          </div>
+          <div class="form-field">
+            <label>E-mail</label>
+            <input type="email" placeholder="seu@email.com" />
+          </div>
+          <div class="form-field">
+            <label>Tipo de financiamento</label>
+            <div class="select-wrap">
+              <select>
+                <option>Financiamento Residencial</option>
+                <option>Empréstimo com Garantia de Imóvel</option>
+                <option>Imóvel Comercial ou Terreno</option>
+                <option>Portabilidade de Crédito</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-field">
+            <label>Mensagem (opcional)</label>
+            <textarea rows="3" placeholder="Conte um pouco sobre seu projeto..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-gold btn-full">Enviar solicitação</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="logo.png" alt="Connecti Financiamentos" class="footer-logo" />
+        <p>Conectando você ao melhor financiamento imobiliário do mercado.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="https://wa.me/5500000000000" target="_blank" aria-label="WhatsApp">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Links rápidos</h4>
+        <ul>
+          <li><a href="#sobre">Sobre nós</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#taxas">Tabela de taxas</a></li>
+          <li><a href="#simulador">Simulador</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Serviços</h4>
+        <ul>
+          <li><a href="#">Financiamento Residencial</a></li>
+          <li><a href="#">Crédito com Garantia</a></li>
+          <li><a href="#">Imóvel Comercial</a></li>
+          <li><a href="#">Portabilidade</a></li>
+          <li><a href="#">Consultoria FGTS</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Política de Privacidade</a></li>
+          <li><a href="#">Termos de Uso</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2026 Connecti Financiamentos. Todos os direitos reservados.</p>
+        <p>Correspondente bancário autorizado pelo Banco Central do Brasil.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/5500000000000" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
