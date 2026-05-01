@@ -177,9 +177,17 @@ var bancosData = {
    NAVBAR SCROLL
    ========================================== */
 var navbar = document.getElementById('navbar');
-window.addEventListener('scroll', function() {
-  navbar.classList.toggle('scrolled', window.scrollY > 40);
-});
+var heroEl = document.getElementById('inicio');
+function updateNavbar() {
+  if (!navbar) return;
+  var y = window.scrollY;
+  navbar.classList.toggle('scrolled', y > 40);
+  var pastHero = heroEl && y > heroEl.offsetHeight - 72;
+  navbar.classList.toggle('past-hero', pastHero);
+}
+window.addEventListener('scroll', updateNavbar);
+window.addEventListener('resize', updateNavbar);
+updateNavbar();
 
 /* ==========================================
    HAMBURGER MENU
