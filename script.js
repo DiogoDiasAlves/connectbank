@@ -182,11 +182,15 @@ function updateNavbar() {
   if (!navbar) return;
   var y = window.scrollY;
   navbar.classList.toggle('scrolled', y > 40);
-  var pastHero = heroEl && y > heroEl.offsetHeight - 72;
+  var heroH = heroEl ? heroEl.getBoundingClientRect().height : 0;
+  /* Evita past-hero errado se altura ainda não foi calculada */
+  var threshold = heroH > 120 ? heroH - 72 : 99999;
+  var pastHero = y > threshold;
   navbar.classList.toggle('past-hero', pastHero);
 }
 window.addEventListener('scroll', updateNavbar);
 window.addEventListener('resize', updateNavbar);
+window.addEventListener('load', updateNavbar);
 updateNavbar();
 
 /* ==========================================
